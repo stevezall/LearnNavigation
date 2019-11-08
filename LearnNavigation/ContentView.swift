@@ -26,7 +26,7 @@ struct ContentView: View {
     
     var alerts2 = [
         CustomAlert(id: 1, name: "alert 1", alertType: "alert"),
-        CustomAlert(id: 2, name: "alert 2", alertType: "actionSheet")
+        CustomAlert(id: 2, name: "actionSheet 2", alertType: "actionSheet")
     ]
     
     @State var showAlert: Bool = false
@@ -76,12 +76,11 @@ struct ContentView: View {
                             Alert(title: Text("Alert!"), message: Text("You tapped \(alert)"), primaryButton: .default(Text("Sounds good")), secondaryButton: .destructive(Text("DELETE"), action: {
                                 // delete action
                             }))
-                            // magically resets state variable on dismiss
                         }
                     }
                 }
                 
-                Section(header: Text("a different way, but right?")) {
+                Section(header: Text("a different way...but is it right?")) {
                     // https://mecid.github.io/2019/07/24/alerts-actionsheets-modals-and-popovers-in-swiftui/
                     ForEach(alerts2) { alert in
                         Button("Tap me \(alert.name)") {
