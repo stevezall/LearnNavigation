@@ -38,7 +38,7 @@ struct ContentView: View {
         
         NavigationView {
             List {
-                Section(header: Text("Organize")) {
+                Section(header: Text("Organize".uppercased())) {
                     NavigationLink(destination: OrganizeView()) {
                         Text("Get organized!")
                     }

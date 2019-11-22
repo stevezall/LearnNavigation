@@ -19,7 +19,6 @@ struct OrganizeView: View {
     }
     
     var body: some View {
-        NavigationView {
             List {
                 Section {
                     VStack {
@@ -42,7 +41,6 @@ struct OrganizeView: View {
             }
             .navigationBarTitle("Organize")
             .listStyle(GroupedListStyle())
-        }
     }
     
     struct Row3: View {
@@ -105,7 +103,9 @@ extension OrganizeView.Row4 {
 
 struct OrganizeView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView {
         OrganizeView()
+        }
     }
 }
 
