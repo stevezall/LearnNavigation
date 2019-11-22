@@ -38,6 +38,11 @@ struct ContentView: View {
         
         NavigationView {
             List {
+                Section(header: Text("Organize")) {
+                    NavigationLink(destination: OrganizeView()) {
+                        Text("Get organized!")
+                    }
+                }
                 Section() {
                     // https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-views-in-a-loop-using-foreach
                     ForEach(details, id: \.self) { detail in
@@ -107,6 +112,7 @@ struct ContentView: View {
         .actionSheet(item: self.$actionSheetItem) { (item) in
             ActionSheet(title: Text(item.name))
         }
+        .accentColor(.red)
     }
 }
 
