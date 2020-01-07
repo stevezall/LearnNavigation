@@ -38,9 +38,22 @@ struct ContentView: View {
         
         NavigationView {
             List {
-                Section(header: Text("Organize".uppercased())) {
+                Section {
                     NavigationLink(destination: OrganizeView()) {
+                        Image(systemName: "paperclip")
                         Text("Get organized!")
+                    }
+                    NavigationLink(destination: InputView()) {
+                        Image(systemName: "hand.thumbsup")
+                        Text("More input!")
+                    }
+                    NavigationLink(destination: UpdatingListView()) {
+                        Group {
+                            Image(systemName: "list.number")
+                            Text("Updating List")
+                        }
+                        .foregroundColor(.blue)
+                        
                     }
                 }
                 Section() {
